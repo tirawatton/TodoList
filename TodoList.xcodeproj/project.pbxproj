@@ -23,6 +23,11 @@
 		E638FBC826035223009683EE /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E638FBC726035223009683EE /* TodoListViewController.swift */; };
 		E638FBCD26035264009683EE /* Extension+UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E638FBCC26035264009683EE /* Extension+UIStoryboard.swift */; };
 		E638FBD2260352E3009683EE /* Extension+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E638FBD1260352E3009683EE /* Extension+UserDefaults.swift */; };
+		E660C8552603606200EFA647 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660C8542603606200EFA647 /* NetworkConstants.swift */; };
+		E660C85D260360B900EFA647 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660C85C260360B900EFA647 /* Response.swift */; };
+		E660C862260360E100EFA647 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660C861260360E100EFA647 /* AppError.swift */; };
+		E660C867260360FB00EFA647 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660C866260360FB00EFA647 /* ApiRouter.swift */; };
+		E660C86C2603658200EFA647 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660C86B2603658200EFA647 /* ApiRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +76,11 @@
 		E638FBC726035223009683EE /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		E638FBCC26035264009683EE /* Extension+UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIStoryboard.swift"; sourceTree = "<group>"; };
 		E638FBD1260352E3009683EE /* Extension+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UserDefaults.swift"; sourceTree = "<group>"; };
+		E660C8542603606200EFA647 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		E660C85C260360B900EFA647 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		E660C861260360E100EFA647 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		E660C866260360FB00EFA647 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		E660C86B2603658200EFA647 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +163,7 @@
 				E638FB75260350DA009683EE /* SceneDelegate.swift */,
 				E638FBB326035156009683EE /* AppCoordinator.swift */,
 				E638FBBD260351A5009683EE /* MainNavigationController.swift */,
+				E660C8532603602E00EFA647 /* Service */,
 				E638FBDA2603535F009683EE /* Application */,
 				E638FBD626035321009683EE /* SupportFiles */,
 				E638FB79260350DA009683EE /* Main.storyboard */,
@@ -229,6 +240,18 @@
 				E638FBC726035223009683EE /* TodoListViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E660C8532603602E00EFA647 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E660C8542603606200EFA647 /* NetworkConstants.swift */,
+				E660C85C260360B900EFA647 /* Response.swift */,
+				E660C861260360E100EFA647 /* AppError.swift */,
+				E660C866260360FB00EFA647 /* ApiRouter.swift */,
+				E660C86B2603658200EFA647 /* ApiRequest.swift */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,12 +472,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E660C86C2603658200EFA647 /* ApiRequest.swift in Sources */,
+				E660C8552603606200EFA647 /* NetworkConstants.swift in Sources */,
+				E660C867260360FB00EFA647 /* ApiRouter.swift in Sources */,
 				E638FBBE260351A5009683EE /* MainNavigationController.swift in Sources */,
 				E638FBC826035223009683EE /* TodoListViewController.swift in Sources */,
 				E638FBB426035156009683EE /* AppCoordinator.swift in Sources */,
+				E660C85D260360B900EFA647 /* Response.swift in Sources */,
 				E638FB74260350DA009683EE /* AppDelegate.swift in Sources */,
 				E638FBD2260352E3009683EE /* Extension+UserDefaults.swift in Sources */,
 				E638FBC326035215009683EE /* LoggedInViewController.swift in Sources */,
+				E660C862260360E100EFA647 /* AppError.swift in Sources */,
 				E638FBCD26035264009683EE /* Extension+UIStoryboard.swift in Sources */,
 				E638FB76260350DA009683EE /* SceneDelegate.swift in Sources */,
 			);
