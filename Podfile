@@ -8,6 +8,7 @@ install! 'cocoapods', :disable_input_output_paths => true
 target 'TodoList' do
   # Pods for TodoList
   pod 'Alamofire', '~> 5.2'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
 
 end
 
