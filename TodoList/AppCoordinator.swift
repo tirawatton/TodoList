@@ -15,12 +15,7 @@ final class AppCoordinator: Coordinator {
     }
 
     func startViewController() {
-        let navigationController = UINavigationController()
-        let productsCoordinator = TodoListCoordinator(navigationController: navigationController)
-
-        childCoordinator.append(productsCoordinator)
-
-        productsCoordinator.startViewController()
+        let navigationController = MainNavigationController()
 
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
