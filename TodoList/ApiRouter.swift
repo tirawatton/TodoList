@@ -59,6 +59,9 @@ enum ApiRouter: ApiConfiguration {
         urlRequest.httpMethod = method.rawValue
         urlRequest.allHTTPHeaderFields = headers.dictionary
 
+        let jsonData = try JSONSerialization.data(withJSONObject: body)
+        urlRequest.httpBody = jsonData
+
         return urlRequest
     }
 }

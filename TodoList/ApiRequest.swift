@@ -40,12 +40,8 @@ class ApiRequest {
                 }
             }
     }
-//
-//    func requestProductsData(completion: @escaping (Response<[ProductsModel], APIError>) -> Void) {
-//        request(router: .products, completion: completion)
-//    }
-//
-//    func requestProductDetailData(productId: Int, completion: @escaping (Response<ProductsModel, APIError>) -> Void) {
-//        request(router: .product(productId: productId), completion: completion)
-//    }
+
+    func requestLoggedIn(email: String, password: String,completion: @escaping (Response<LoggedInModel, AppError>) -> Void) {
+        request(router: .loggedIn(email: email, password: password), completion: completion)
+    }
 }
