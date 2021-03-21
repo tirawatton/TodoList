@@ -9,11 +9,14 @@ protocol ApiConfiguration: URLRequestConvertible {
 
 enum ApiRouter: ApiConfiguration {
     case loggedIn(email: String, password: String)
+    case register(name: String, email: String, password: String, age: Int)
 
     // MARK: - HTTPMethod
     internal var method: HTTPMethod {
         switch self {
         case .loggedIn:
+            return .post
+        case .register:
             return .post
         }
     }
@@ -23,6 +26,8 @@ enum ApiRouter: ApiConfiguration {
         switch self {
         case .loggedIn:
             return "user/login"
+        case .register:
+            return "user/register"
         }
     }
 
@@ -33,6 +38,11 @@ enum ApiRouter: ApiConfiguration {
         case let .loggedIn(email: email, password: password):
             bodyDict[K.ApiBody.email] = email
             bodyDict[K.ApiBody.password] = password
+        case let .register(name: name, email: email, password: password, age: age):
+            bodyDict[K.ApiBody.name] = name
+            bodyDict[K.ApiBody.email] = email
+            bodyDict[K.ApiBody.password] = password
+            bodyDict[K.ApiBody.age] = age
         }
 
         return bodyDict
@@ -42,7 +52,7 @@ enum ApiRouter: ApiConfiguration {
         var headers : HTTPHeaders = [:]
 
         switch self {
-        case .loggedIn:
+        case .loggedIn, .register:
             headers[HTTPHeaderField.contentType.rawValue] = ContentType.contentTypeValue.rawValue
         }
 

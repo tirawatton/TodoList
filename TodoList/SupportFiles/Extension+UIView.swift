@@ -1,4 +1,5 @@
 import UIKit
+import MBProgressHUD
 
 extension UIView {
     func addShadow(offset: CGSize, color: UIColor, cornerRadius: CGFloat, radius: CGFloat, opacity: Float) {

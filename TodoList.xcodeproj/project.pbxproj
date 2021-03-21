@@ -35,6 +35,11 @@
 		E660C862260360E100EFA647 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660C861260360E100EFA647 /* AppError.swift */; };
 		E660C867260360FB00EFA647 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660C866260360FB00EFA647 /* ApiRouter.swift */; };
 		E660C86C2603658200EFA647 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660C86B2603658200EFA647 /* ApiRequest.swift */; };
+		E6853D19260726A400873C03 /* ProgessHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6853D18260726A400873C03 /* ProgessHUD.swift */; };
+		E6F9C7152604A9E400FC3541 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F9C7142604A9E400FC3541 /* RegisterViewController.swift */; };
+		E6F9C7222604AC4500FC3541 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F9C7212604AC4500FC3541 /* RegisterViewModel.swift */; };
+		E6F9C72B2604AC5600FC3541 /* RegisterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F9C72A2604AC5600FC3541 /* RegisterRepository.swift */; };
+		E6F9C7342604ACC000FC3541 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F9C7332604ACC000FC3541 /* RegisterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +100,11 @@
 		E660C861260360E100EFA647 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		E660C866260360FB00EFA647 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		E660C86B2603658200EFA647 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		E6853D18260726A400873C03 /* ProgessHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgessHUD.swift; sourceTree = "<group>"; };
+		E6F9C7142604A9E400FC3541 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E6F9C7212604AC4500FC3541 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		E6F9C72A2604AC5600FC3541 /* RegisterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRepository.swift; sourceTree = "<group>"; };
+		E6F9C7332604ACC000FC3541 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +224,7 @@
 				E638FBD1260352E3009683EE /* Extension+UserDefaults.swift */,
 				E64AA49C2604576000B45C7F /* Extension+UIView.swift */,
 				E64AA4D8260479C200B45C7F /* Bindable.swift */,
+				E6853D18260726A400873C03 /* ProgessHUD.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -221,8 +232,9 @@
 		E638FBDA2603535F009683EE /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				E638FBE126035370009683EE /* LoggedIn */,
 				E638FBE526035381009683EE /* TodoList */,
+				E638FBE126035370009683EE /* LoggedIn */,
+				E6F9C7192604AC2D00FC3541 /* Register */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -305,6 +317,49 @@
 				E660C86B2603658200EFA647 /* ApiRequest.swift */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		E6F9C7192604AC2D00FC3541 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				E6F9C71D2604AC3600FC3541 /* ViewController */,
+				E6F9C7262604AC4700FC3541 /* ViewModel */,
+				E6F9C72F2604AC7300FC3541 /* Repository */,
+				E6F9C7382604ACC300FC3541 /* Model */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		E6F9C71D2604AC3600FC3541 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E6F9C7142604A9E400FC3541 /* RegisterViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E6F9C7262604AC4700FC3541 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E6F9C7212604AC4500FC3541 /* RegisterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E6F9C72F2604AC7300FC3541 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E6F9C72A2604AC5600FC3541 /* RegisterRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		E6F9C7382604ACC300FC3541 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E6F9C7332604ACC000FC3541 /* RegisterModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -534,15 +589,20 @@
 				E638FBC826035223009683EE /* TodoListViewController.swift in Sources */,
 				E638FBB426035156009683EE /* AppCoordinator.swift in Sources */,
 				E660C85D260360B900EFA647 /* Response.swift in Sources */,
+				E6F9C7152604A9E400FC3541 /* RegisterViewController.swift in Sources */,
 				E638FB74260350DA009683EE /* AppDelegate.swift in Sources */,
+				E6F9C72B2604AC5600FC3541 /* RegisterRepository.swift in Sources */,
 				E64AA4BC2604629300B45C7F /* LoggedInModel.swift in Sources */,
 				E638FBD2260352E3009683EE /* Extension+UserDefaults.swift in Sources */,
 				E638FBC326035215009683EE /* LoggedInViewController.swift in Sources */,
 				E660C862260360E100EFA647 /* AppError.swift in Sources */,
+				E6F9C7222604AC4500FC3541 /* RegisterViewModel.swift in Sources */,
 				E638FBCD26035264009683EE /* Extension+UIStoryboard.swift in Sources */,
 				E638FB76260350DA009683EE /* SceneDelegate.swift in Sources */,
 				E64AA4D9260479C200B45C7F /* Bindable.swift in Sources */,
+				E6F9C7342604ACC000FC3541 /* RegisterModel.swift in Sources */,
 				E64AA4B02604614B00B45C7F /* LoggedInViewModel.swift in Sources */,
+				E6853D19260726A400873C03 /* ProgessHUD.swift in Sources */,
 				E64AA4C5260464BF00B45C7F /* LoggedInRepository.swift in Sources */,
 				E64AA4A726045F9900B45C7F /* LoggedInViewControllerAdapter.swift in Sources */,
 			);

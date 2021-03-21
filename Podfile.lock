@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.4.1)
+  - MBProgressHUD (1.2.0)
   - SkyFloatingLabelTextField (3.8.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - MBProgressHUD (~> 1.2.0)
   - SkyFloatingLabelTextField (~> 3.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - MBProgressHUD
     - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
 
-PODFILE CHECKSUM: 9c7d18fb6223b0b1442158e7edff08e0f8980577
+PODFILE CHECKSUM: 4915ec243683076f49236c4d93dd9567b4a2cc20
 
 COCOAPODS: 1.10.1

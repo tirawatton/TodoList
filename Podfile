@@ -9,7 +9,8 @@ target 'TodoList' do
   # Pods for TodoList
   pod 'Alamofire', '~> 5.2'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
-
+  pod 'MBProgressHUD', '~> 1.2.0'
+  
 end
 
 target 'TodoListTests' do

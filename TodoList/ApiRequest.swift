@@ -41,7 +41,11 @@ class ApiRequest {
             }
     }
 
-    func requestLoggedIn(email: String, password: String,completion: @escaping (Response<LoggedInModel, AppError>) -> Void) {
+    func requestLoggedIn(email: String, password: String, completion: @escaping (Response<LoggedInModel, AppError>) -> Void) {
         request(router: .loggedIn(email: email, password: password), completion: completion)
+    }
+
+    func requestRegister(name: String ,email: String, password: String, age: Int, completion: @escaping (Response<LoggedInModel, AppError>) -> Void) {
+        request(router: .register(name: name, email: email, password: password, age: age), completion: completion)
     }
 }

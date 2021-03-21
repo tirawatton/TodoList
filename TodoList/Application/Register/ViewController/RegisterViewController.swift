@@ -1,45 +1,46 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class LoggedInViewController: UIViewController {
+class RegisterViewController: UIViewController {
 
-    lazy var viewModel: LoggedInViewModel = {
-        return LoggedInViewModel()
+    lazy var viewModel: RegisterViewModel = {
+        return RegisterViewModel()
     }()
 
-    static func instantiate(for viewModel: LoggedInViewModel) -> LoggedInViewController {
+    static func instantiate(for viewModel: RegisterViewModel) -> RegisterViewController {
         let storyboard = UIStoryboard(name: .main, bundle: .main)
-        let viewController = storyboard.instantiate(LoggedInViewController.self)
+        let viewController = storyboard.instantiate(RegisterViewController.self)
         viewController.viewModel = viewModel
         return viewController
     }
 
+    @IBOutlet weak var nameTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
-
-    @IBOutlet weak var shadowBackgroundView: UIView!
+    @IBOutlet weak var ageTextField: SkyFloatingLabelTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
         setupUI()
         setupTextFieldState()
-
-        emailTextField.text = "muh.nurali43@gmail.com"
-        passwordTextField.text = "12345678"
+        bindViewModel()
     }
 
     private func setupUI() {
         passwordTextField.enablePasswordToggle()
 
+        nameTextField.delegate = self
+        ageTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
 
     private func setupTextFieldState() {
-        viewModel.loggedInInputErrorMessage.bind { [weak self] isEmpty in
+        viewModel.registerInputErrorMessage.bind { [weak self] isEmpty in
             self?.emailTextField.errorMessage = "Please enter your Email."
-            self?.passwordTextField.errorMessage = "Please enter your Email."
+            self?.passwordTextField.errorMessage = "Please enter your Password."
+            self?.ageTextField.errorMessage = "Please enter your Age."
+            self?.nameTextField.errorMessage = "Please enter your Name."
         }
 
         viewModel.isEmailTextFieldEmpty.bind { [weak self] isEmpty in
@@ -56,6 +57,24 @@ class LoggedInViewController: UIViewController {
                 guard let isEmpty = isEmpty else { return }
                 if isEmpty {
                     self?.passwordTextField.selectedLineColor = .red
+                }
+            }
+        }
+
+        viewModel.isNameTextFieldEmpty.bind { [weak self] isEmpty in
+            DispatchQueue.main.async {
+                guard let isEmpty = isEmpty else { return }
+                if isEmpty {
+                    self?.nameTextField.selectedLineColor = .red
+                }
+            }
+        }
+
+        viewModel.isAgeTextFieldEmpty.bind { [weak self] isEmpty in
+            DispatchQueue.main.async {
+                guard let isEmpty = isEmpty else { return }
+                if isEmpty {
+                    self?.ageTextField.selectedLineColor = .red
                 }
             }
         }
@@ -78,11 +97,11 @@ class LoggedInViewController: UIViewController {
             }
         }
 
-        viewModel.isLoggedInSuccessful.bind { [weak self] isSuccessful in
+        viewModel.isRegisterSuccessful.bind { [weak self] isSuccessful in
             DispatchQueue.main.async {
                 guard let isSuccessful = isSuccessful else { return }
                 if isSuccessful {
-                    self?.isLoggedInSuccessfull()
+                    self?.isRegisterSuccessful()
                 }
             }
         }
@@ -103,39 +122,33 @@ class LoggedInViewController: UIViewController {
         self.present(dialogMessage, animated: true, completion: nil)
     }
 
-    private func isLoggedInSuccessfull() {
-        let rootViewController = UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController
-        guard let mainViewController = rootViewController as? MainNavigationViewController else { return }
-
-        let viewController = TodoListViewController.instantiate()
-        mainViewController.viewControllers = [viewController]
-
-        dismiss(animated: true) {
-            UserDefaults.standard.setIsLoggedIn(set: true)
-        }
+    private func isRegisterSuccessful() {
+        self.dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func isLoggedInAction(_ sender: UIButton) {
-        viewModel.updateLoggedIn(email: emailTextField.text!, password: passwordTextField.text!)
+    @IBAction func backAction(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 
-        let input = viewModel.logInInput()
+    @IBAction func registerAction(_ sender: UIButton) {
+        let name = nameTextField.text!
+        let email = emailTextField.text!
+        let password = passwordTextField.text!
+        let age = Int(ageTextField.text!) ?? 1
+
+        viewModel.updateRegister(name: name, email: email, password: password, age: age)
+        let input = viewModel.registerInput()
 
         switch input {
         case .correct:
-            viewModel.toLogIn()
+            viewModel.toRegister()
         case .incorrect:
             return
         }
     }
-
-    @IBAction func registerAction(_ sender: UIButton) {
-        let viewController = RegisterViewController.instantiate(for: RegisterViewModel())
-        viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true, completion: nil)
-    }
 }
 
-extension LoggedInViewController: UITextFieldDelegate {
+extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.returnKeyType == .next {
             emailTextField.resignFirstResponder()
@@ -150,3 +163,4 @@ extension LoggedInViewController: UITextFieldDelegate {
         view.endEditing(true)
     }
 }
+

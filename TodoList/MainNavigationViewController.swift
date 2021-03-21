@@ -13,8 +13,7 @@ final class MainNavigationViewController: UINavigationController {
     }
 
     private func isLoggedIn() -> Bool {
-//        return UserDefaults.standard.isLoggedIn()
-        return false
+        return UserDefaults.standard.isLoggedIn()
     }
 
     @objc func showIntrodctionPage() {

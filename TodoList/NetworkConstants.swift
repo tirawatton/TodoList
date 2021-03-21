@@ -6,8 +6,10 @@ internal struct K {
     }
 
     struct ApiBody {
+        static let name = "name"
         static let email = "email"
         static let password = "password"
+        static let age = "age"
     }
 }
 

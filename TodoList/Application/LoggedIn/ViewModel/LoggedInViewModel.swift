@@ -30,12 +30,13 @@ final class LoggedInViewModel {
     var userDetail = Bindable<LoggedInModel>()
 
     func updateLoggedIn(email: String, password: String) {
+        isLoading.value = true
+
         userLogIn.email = email
         userLogIn.password = password
     }
 
     func toLogIn() {
-        isLoading.value = true
         isLoggedInSuccessful.value = false
         service.fetchLogged(email: email, password: password) { [weak self] loggedIn in
             self?.userDetail.value = loggedIn
