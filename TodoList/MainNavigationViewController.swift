@@ -5,10 +5,10 @@ final class MainNavigationViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if isLoggedIn() {
-            let viewController = TodoListViewController.instantiate()
+            let viewController = TodoListViewController.instantiate(for: TodoListViewModel())
             viewControllers = [viewController]
         } else {
-            perform(#selector(showIntrodctionPage), with: nil, afterDelay: 0.01)
+            perform(#selector(showLoginScreen), with: nil, afterDelay: 0.01)
         }
     }
 
@@ -16,7 +16,7 @@ final class MainNavigationViewController: UINavigationController {
         return UserDefaults.standard.isLoggedIn()
     }
 
-    @objc func showIntrodctionPage() {
+    @objc func showLoginScreen() {
         let viewController = LoggedInViewController.instantiate(for: LoggedInViewModel())
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true, completion: nil)

@@ -42,10 +42,12 @@ final class LoggedInViewModel {
             self?.userDetail.value = loggedIn
             self?.isLoading.value = false
             self?.isLoggedInSuccessful.value = true
-        } error: { error in
-            self.errorMessage.value = "Your email or password is incorrect."
-            self.isLoading.value = false
-            self.isLoggedInSuccessful.value = false
+
+            self?.userDetail.value?.saveUserData()
+        } error: { [weak self] error in
+            self?.errorMessage.value = "Your email or password is incorrect."
+            self?.isLoading.value = false
+            self?.isLoggedInSuccessful.value = false
         }
     }
 

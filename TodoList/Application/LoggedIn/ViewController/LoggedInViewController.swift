@@ -107,12 +107,12 @@ class LoggedInViewController: UIViewController {
         let rootViewController = UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController
         guard let mainViewController = rootViewController as? MainNavigationViewController else { return }
 
-        let viewController = TodoListViewController.instantiate()
+        let viewController = TodoListViewController.instantiate(for: TodoListViewModel())
         mainViewController.viewControllers = [viewController]
 
-        dismiss(animated: true) {
-            UserDefaults.standard.setIsLoggedIn(set: true)
-        }
+        UserDefaults.standard.setIsLoggedIn(set: true)
+
+        dismiss(animated: true)
     }
 
     @IBAction func isLoggedInAction(_ sender: UIButton) {

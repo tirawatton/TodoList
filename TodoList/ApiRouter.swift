@@ -10,6 +10,7 @@ protocol ApiConfiguration: URLRequestConvertible {
 enum ApiRouter: ApiConfiguration {
     case loggedIn(email: String, password: String)
     case register(name: String, email: String, password: String, age: Int)
+    case allTask(token: String)
 
     // MARK: - HTTPMethod
     internal var method: HTTPMethod {
@@ -18,6 +19,8 @@ enum ApiRouter: ApiConfiguration {
             return .post
         case .register:
             return .post
+        case .allTask:
+            return .get
         }
     }
 
@@ -28,6 +31,8 @@ enum ApiRouter: ApiConfiguration {
             return "user/login"
         case .register:
             return "user/register"
+        case .allTask:
+            return "task"
         }
     }
 
@@ -43,6 +48,8 @@ enum ApiRouter: ApiConfiguration {
             bodyDict[K.ApiBody.email] = email
             bodyDict[K.ApiBody.password] = password
             bodyDict[K.ApiBody.age] = age
+        default:
+            break
         }
 
         return bodyDict
@@ -54,6 +61,8 @@ enum ApiRouter: ApiConfiguration {
         switch self {
         case .loggedIn, .register:
             headers[HTTPHeaderField.contentType.rawValue] = ContentType.contentTypeValue.rawValue
+        case let .allTask(token: token):
+            headers[HTTPHeaderField.authentication.rawValue] = "Bearer \(token)"
         }
 
         return headers
@@ -69,8 +78,11 @@ enum ApiRouter: ApiConfiguration {
         urlRequest.httpMethod = method.rawValue
         urlRequest.allHTTPHeaderFields = headers.dictionary
 
-        let jsonData = try JSONSerialization.data(withJSONObject: body)
-        urlRequest.httpBody = jsonData
+        if let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed) {
+            if urlRequest.method != .get {
+                urlRequest.httpBody = jsonData
+            }
+        }
 
         return urlRequest
     }

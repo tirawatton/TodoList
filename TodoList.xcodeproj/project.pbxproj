@@ -25,7 +25,6 @@
 		E638FBD2260352E3009683EE /* Extension+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E638FBD1260352E3009683EE /* Extension+UserDefaults.swift */; };
 		E64AA49D2604576000B45C7F /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64AA49C2604576000B45C7F /* Extension+UIView.swift */; };
 		E64AA4A226045D7800B45C7F /* Extension+SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64AA4A126045D7800B45C7F /* Extension+SkyFloatingLabelTextField.swift */; };
-		E64AA4A726045F9900B45C7F /* LoggedInViewControllerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64AA4A626045F9900B45C7F /* LoggedInViewControllerAdapter.swift */; };
 		E64AA4B02604614B00B45C7F /* LoggedInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64AA4AF2604614B00B45C7F /* LoggedInViewModel.swift */; };
 		E64AA4BC2604629300B45C7F /* LoggedInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64AA4BB2604629300B45C7F /* LoggedInModel.swift */; };
 		E64AA4C5260464BF00B45C7F /* LoggedInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64AA4C4260464BF00B45C7F /* LoggedInRepository.swift */; };
@@ -36,6 +35,14 @@
 		E660C867260360FB00EFA647 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660C866260360FB00EFA647 /* ApiRouter.swift */; };
 		E660C86C2603658200EFA647 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660C86B2603658200EFA647 /* ApiRequest.swift */; };
 		E6853D19260726A400873C03 /* ProgessHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6853D18260726A400873C03 /* ProgessHUD.swift */; };
+		E6853D24260840AA00873C03 /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6853D23260840AA00873C03 /* TodoListViewModel.swift */; };
+		E6853D2D260840C300873C03 /* TodoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6853D2C260840C300873C03 /* TodoListRepository.swift */; };
+		E6853D362608516500873C03 /* TodoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6853D352608516500873C03 /* TodoListModel.swift */; };
+		E6853D3F26086DF900873C03 /* TodoListTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6853D3E26086DF900873C03 /* TodoListTableViewAdapter.swift */; };
+		E6853D4926086ECE00873C03 /* TodoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6853D4726086ECE00873C03 /* TodoListTableViewCell.swift */; };
+		E6853D4A26086ECE00873C03 /* TodoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6853D4826086ECE00873C03 /* TodoListTableViewCell.xib */; };
+		E6853D5326086EED00873C03 /* Extension+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6853D5226086EED00873C03 /* Extension+UITableView.swift */; };
+		E6853D582608782800873C03 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6853D572608782800873C03 /* CheckBoxButton.swift */; };
 		E6F9C7152604A9E400FC3541 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F9C7142604A9E400FC3541 /* RegisterViewController.swift */; };
 		E6F9C7222604AC4500FC3541 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F9C7212604AC4500FC3541 /* RegisterViewModel.swift */; };
 		E6F9C72B2604AC5600FC3541 /* RegisterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F9C72A2604AC5600FC3541 /* RegisterRepository.swift */; };
@@ -90,7 +97,6 @@
 		E638FBD1260352E3009683EE /* Extension+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UserDefaults.swift"; sourceTree = "<group>"; };
 		E64AA49C2604576000B45C7F /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		E64AA4A126045D7800B45C7F /* Extension+SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+SkyFloatingLabelTextField.swift"; sourceTree = "<group>"; };
-		E64AA4A626045F9900B45C7F /* LoggedInViewControllerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewControllerAdapter.swift; sourceTree = "<group>"; };
 		E64AA4AF2604614B00B45C7F /* LoggedInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewModel.swift; sourceTree = "<group>"; };
 		E64AA4BB2604629300B45C7F /* LoggedInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInModel.swift; sourceTree = "<group>"; };
 		E64AA4C4260464BF00B45C7F /* LoggedInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInRepository.swift; sourceTree = "<group>"; };
@@ -101,6 +107,14 @@
 		E660C866260360FB00EFA647 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		E660C86B2603658200EFA647 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		E6853D18260726A400873C03 /* ProgessHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgessHUD.swift; sourceTree = "<group>"; };
+		E6853D23260840AA00873C03 /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
+		E6853D2C260840C300873C03 /* TodoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListRepository.swift; sourceTree = "<group>"; };
+		E6853D352608516500873C03 /* TodoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListModel.swift; sourceTree = "<group>"; };
+		E6853D3E26086DF900873C03 /* TodoListTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewAdapter.swift; sourceTree = "<group>"; };
+		E6853D4726086ECE00873C03 /* TodoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewCell.swift; sourceTree = "<group>"; };
+		E6853D4826086ECE00873C03 /* TodoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoListTableViewCell.xib; sourceTree = "<group>"; };
+		E6853D5226086EED00873C03 /* Extension+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITableView.swift"; sourceTree = "<group>"; };
+		E6853D572608782800873C03 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		E6F9C7142604A9E400FC3541 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E6F9C7212604AC4500FC3541 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		E6F9C72A2604AC5600FC3541 /* RegisterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRepository.swift; sourceTree = "<group>"; };
@@ -223,8 +237,10 @@
 				E64AA4A126045D7800B45C7F /* Extension+SkyFloatingLabelTextField.swift */,
 				E638FBD1260352E3009683EE /* Extension+UserDefaults.swift */,
 				E64AA49C2604576000B45C7F /* Extension+UIView.swift */,
+				E6853D5226086EED00873C03 /* Extension+UITableView.swift */,
 				E64AA4D8260479C200B45C7F /* Bindable.swift */,
 				E6853D18260726A400873C03 /* ProgessHUD.swift */,
+				E6853D572608782800873C03 /* CheckBoxButton.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -243,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				E638FBE92603538A009683EE /* ViewController */,
-				E64AA4AB26045F9C00B45C7F /* Adapter */,
 				E64AA4B42604614E00B45C7F /* ViewModel */,
 				E64AA4C02604629600B45C7F /* Model */,
 				E64AA4C9260464C300B45C7F /* Repository */,
@@ -255,6 +270,11 @@
 			isa = PBXGroup;
 			children = (
 				E638FBED26035391009683EE /* ViewController */,
+				E6853D28260840AD00873C03 /* ViewModel */,
+				E6853D31260840C700873C03 /* Repository */,
+				E6853D3A260851E900873C03 /* Model */,
+				E6853D4326086E8F00873C03 /* Adapter */,
+				E6853D4E26086ED200873C03 /* View */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -273,14 +293,6 @@
 				E638FBC726035223009683EE /* TodoListViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		E64AA4AB26045F9C00B45C7F /* Adapter */ = {
-			isa = PBXGroup;
-			children = (
-				E64AA4A626045F9900B45C7F /* LoggedInViewControllerAdapter.swift */,
-			);
-			path = Adapter;
 			sourceTree = "<group>";
 		};
 		E64AA4B42604614E00B45C7F /* ViewModel */ = {
@@ -317,6 +329,47 @@
 				E660C86B2603658200EFA647 /* ApiRequest.swift */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		E6853D28260840AD00873C03 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E6853D23260840AA00873C03 /* TodoListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E6853D31260840C700873C03 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E6853D2C260840C300873C03 /* TodoListRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		E6853D3A260851E900873C03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E6853D352608516500873C03 /* TodoListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E6853D4326086E8F00873C03 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				E6853D3E26086DF900873C03 /* TodoListTableViewAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		E6853D4E26086ED200873C03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E6853D4726086ECE00873C03 /* TodoListTableViewCell.swift */,
+				E6853D4826086ECE00873C03 /* TodoListTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E6F9C7192604AC2D00FC3541 /* Register */ = {
@@ -472,6 +525,7 @@
 				E638FB80260350DC009683EE /* LaunchScreen.storyboard in Resources */,
 				E638FB7D260350DC009683EE /* Assets.xcassets in Resources */,
 				E638FB7B260350DA009683EE /* Main.storyboard in Resources */,
+				E6853D4A26086ECE00873C03 /* TodoListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,10 +635,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E64AA49D2604576000B45C7F /* Extension+UIView.swift in Sources */,
+				E6853D5326086EED00873C03 /* Extension+UITableView.swift in Sources */,
 				E660C86C2603658200EFA647 /* ApiRequest.swift in Sources */,
 				E660C8552603606200EFA647 /* NetworkConstants.swift in Sources */,
 				E660C867260360FB00EFA647 /* ApiRouter.swift in Sources */,
 				E64AA4A226045D7800B45C7F /* Extension+SkyFloatingLabelTextField.swift in Sources */,
+				E6853D582608782800873C03 /* CheckBoxButton.swift in Sources */,
 				E638FBBE260351A5009683EE /* MainNavigationViewController.swift in Sources */,
 				E638FBC826035223009683EE /* TodoListViewController.swift in Sources */,
 				E638FBB426035156009683EE /* AppCoordinator.swift in Sources */,
@@ -595,16 +651,20 @@
 				E64AA4BC2604629300B45C7F /* LoggedInModel.swift in Sources */,
 				E638FBD2260352E3009683EE /* Extension+UserDefaults.swift in Sources */,
 				E638FBC326035215009683EE /* LoggedInViewController.swift in Sources */,
+				E6853D2D260840C300873C03 /* TodoListRepository.swift in Sources */,
 				E660C862260360E100EFA647 /* AppError.swift in Sources */,
 				E6F9C7222604AC4500FC3541 /* RegisterViewModel.swift in Sources */,
 				E638FBCD26035264009683EE /* Extension+UIStoryboard.swift in Sources */,
 				E638FB76260350DA009683EE /* SceneDelegate.swift in Sources */,
 				E64AA4D9260479C200B45C7F /* Bindable.swift in Sources */,
+				E6853D4926086ECE00873C03 /* TodoListTableViewCell.swift in Sources */,
 				E6F9C7342604ACC000FC3541 /* RegisterModel.swift in Sources */,
 				E64AA4B02604614B00B45C7F /* LoggedInViewModel.swift in Sources */,
+				E6853D3F26086DF900873C03 /* TodoListTableViewAdapter.swift in Sources */,
+				E6853D362608516500873C03 /* TodoListModel.swift in Sources */,
 				E6853D19260726A400873C03 /* ProgessHUD.swift in Sources */,
 				E64AA4C5260464BF00B45C7F /* LoggedInRepository.swift in Sources */,
-				E64AA4A726045F9900B45C7F /* LoggedInViewControllerAdapter.swift in Sources */,
+				E6853D24260840AA00873C03 /* TodoListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -48,4 +48,8 @@ class ApiRequest {
     func requestRegister(name: String ,email: String, password: String, age: Int, completion: @escaping (Response<LoggedInModel, AppError>) -> Void) {
         request(router: .register(name: name, email: email, password: password, age: age), completion: completion)
     }
+
+    func requestAllTask(token: String, completion: @escaping (Response<TodoListModel, AppError>) -> Void) {
+        request(router: .allTask(token: token), completion: completion)
+    }
 }

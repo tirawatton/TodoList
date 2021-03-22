@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="KGk-i7-Jjw" customClass="TodoListTableViewCell" customModule="TodoList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="377" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="377" height="95"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XN-1R-yfu" customClass="CheckBox" customModule="TodoList" customModuleProvider="target">
+                        <rect key="frame" x="16" y="16" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Ilb-CI-5QE"/>
+                            <constraint firstAttribute="width" secondItem="9XN-1R-yfu" secondAttribute="height" multiplier="1:1" id="rmv-Ov-6W6"/>
+                        </constraints>
+                        <state key="normal" image="box"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOw-O8-xbL">
+                        <rect key="frame" x="62" y="21" width="299" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTg-bJ-Rnw">
+                        <rect key="frame" x="62" y="49.5" width="299" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mOw-O8-xbL" firstAttribute="centerY" secondItem="9XN-1R-yfu" secondAttribute="centerY" id="CpK-mj-76C"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MTg-bJ-Rnw" secondAttribute="bottom" priority="999" constant="16" id="FI6-2Y-j0e"/>
+                    <constraint firstItem="mOw-O8-xbL" firstAttribute="leading" secondItem="9XN-1R-yfu" secondAttribute="trailing" constant="16" id="G4T-IJ-SrK"/>
+                    <constraint firstItem="9XN-1R-yfu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="M6r-PO-Ueh"/>
+                    <constraint firstItem="MTg-bJ-Rnw" firstAttribute="top" secondItem="mOw-O8-xbL" secondAttribute="bottom" constant="8" id="Ph0-Eo-PXG"/>
+                    <constraint firstItem="MTg-bJ-Rnw" firstAttribute="leading" secondItem="mOw-O8-xbL" secondAttribute="leading" id="V9T-9t-fq0"/>
+                    <constraint firstItem="9XN-1R-yfu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="h95-Kl-9z1"/>
+                    <constraint firstItem="MTg-bJ-Rnw" firstAttribute="trailing" secondItem="mOw-O8-xbL" secondAttribute="trailing" id="lZ7-Yp-upR"/>
+                    <constraint firstAttribute="trailing" secondItem="mOw-O8-xbL" secondAttribute="trailing" constant="16" id="tWV-au-cNH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="checkboxButton" destination="9XN-1R-yfu" id="5Gi-DL-xr5"/>
+                <outlet property="descriptionLabel" destination="MTg-bJ-Rnw" id="HIT-c4-YfS"/>
+                <outlet property="ownerLabel" destination="mOw-O8-xbL" id="YIL-0V-2vJ"/>
+            </connections>
+            <point key="canvasLocation" x="177.536231884058" y="80.022321428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="box" width="50" height="50"/>
+    </resources>
+</document>

@@ -45,10 +45,10 @@ final class RegisterViewModel {
         service.fetchRegister(name: name, email: email, password: password, age: Int(age) ?? 1) { [weak self] success in
             self?.isLoading.value = false
             self?.isRegisterSuccessful.value = true
-        } error: { error in
-            self.isLoading.value = false
-            self.isRegisterSuccessful.value = false
-            self.registerInputErrorMessage.value = "Your registation is not completed."
+        } error: { [weak self] error in
+            self?.isLoading.value = false
+            self?.isRegisterSuccessful.value = false
+            self?.registerInputErrorMessage.value = "Your registation is not completed."
         }
     }
 
